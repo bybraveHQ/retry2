@@ -1,0 +1,34 @@
+{
+  "name": "@bybrave/retry2",
+  "version": "1.0.0",
+  "description": "Maintained fork of retry — abstraction for exponential-backoff retries, with bundled TypeScript types, an Infinity-retries fix (#84), getTimeout() (#73), and ESM",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["index.js", "index.d.ts", "lib/", "dist/"],
+  "scripts": {
+    "build": "node build/build.js",
+    "test": "node --test test/*.test.js",
+    "test-types": "tsc --noEmit --strict test/type-declarations.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {"type": "git", "url": "git+https://github.com/bybraveHQ/retry2.git"},
+  "bugs": {"url": "https://github.com/bybraveHQ/retry2/issues"},
+  "homepage": "https://github.com/bybraveHQ/retry2#readme",
+  "keywords": ["retry", "backoff", "exponential", "timeout", "repeat", "forever", "esm", "typescript"],
+  "author": "bybrave (https://github.com/bybraveHQ)",
+  "contributors": ["Tim Koschützki", "Felix Geisendörfer (authors of the original retry)"],
+  "license": "MIT",
+  "funding": "https://ko-fi.com/bybrave",
+  "engines": {"node": ">=18"},
+  "devDependencies": {"@types/node": "^20.14.0", "esbuild": "^0.23.0", "typescript": "^5.5.0"}
+}
